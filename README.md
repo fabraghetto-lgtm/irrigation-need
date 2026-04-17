@@ -22,7 +22,7 @@ Proyecto de clasificación multiclase para la competencia de Kaggle **Irrigation
 
 ## Descripción General
 
-Se trata de un problema de **clasificación multiclase con 3 clases** (`High`, `Medium`, `Low`) que representan el nivel de necesidad de riego. El dataset presenta un **desbalance de clases** significativo, con aproximadamente el **58% de las muestras pertenecientes a la clase `High`**.
+Se trata de un problema de **clasificación multiclase con 3 clases** (`High`, `Medium`, `Low`) que representan el nivel de necesidad de riego. El dataset presenta un **desbalance de clases** significativo, con aproximadamente el **58% de las muestras pertenecientes a la clase `Low`**.
 
 Se evaluaron múltiples modelos (LinearSVC, LogisticRegression, XGBClassifier) y se utilizó `balanced_accuracy` como métrica principal de evaluación durante la búsqueda de hiperparámetros, junto con F1-score macro/weighted y matrices de confusión para el reporte de resultados.
 
@@ -68,10 +68,9 @@ irrigation need/
 
 Realizado en `eda.ipynb`. Hallazgos principales:
 
-1. **Estadísticas descriptivas:** La variable `Rainfall_mm` destaca por tener la media alejada de la mediana
-2. **Matriz de correlación:** No se encontraron correlaciones fuertes entre las variables numéricas, lo que sugiere que cada variable aporta información única
-3. **Análisis de outliers:** Se analizaron mediante el método IQR y boxplots — no se identificaron outliers significativos, incluyendo `Rainfall_mm`
-4. **Desbalance de clases:** La clase `Low` representa ~58% de las muestras del target, un desbalance considerable
+1. **Matriz de correlación:** No se encontraron correlaciones fuertes entre las variables numéricas, lo que sugiere que cada variable aporta información única
+2. **Análisis de outliers:** Se analizaron mediante el método IQR y boxplots — no se identificaron outliers significativos, incluyendo `Rainfall_mm`
+3. **Desbalance de clases:** La clase `Low` representa ~58% de las muestras del target, un desbalance considerable
 
 ### Preprocesamiento
 
