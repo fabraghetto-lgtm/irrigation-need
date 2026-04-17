@@ -56,7 +56,7 @@ irrigation need/
 - **Columna objetivo:** `Irrigation_Need` (3 clases: `High`, `Low`, `Medium`)
 - **Columna índice:** `id`
 - **Variables:** Incluyen características numéricas y categóricas de baja cardinalidad (< 10 valores únicos)
-- **Observación clave:** `Rainfall_mm` es la única variable numérica cuya media está significativamente alejada de la mediana
+
 
 > Los archivos CSV no se incluyen en el repositorio (están en `.gitignore`). Deben descargarse directamente desde la competencia de Kaggle.
 
@@ -71,7 +71,7 @@ Realizado en `eda.ipynb`. Hallazgos principales:
 1. **Estadísticas descriptivas:** La variable `Rainfall_mm` destaca por tener la media alejada de la mediana
 2. **Matriz de correlación:** No se encontraron correlaciones fuertes entre las variables numéricas, lo que sugiere que cada variable aporta información única
 3. **Análisis de outliers:** Se analizaron mediante el método IQR y boxplots — no se identificaron outliers significativos, incluyendo `Rainfall_mm`
-4. **Desbalance de clases:** La clase `High` representa ~58% de las muestras del target, un desbalance considerable
+4. **Desbalance de clases:** La clase `Low` representa ~58% de las muestras del target, un desbalance considerable
 
 ### Preprocesamiento
 
