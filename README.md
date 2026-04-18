@@ -34,11 +34,7 @@ Se evaluaron múltiples modelos (LinearSVC, LogisticRegression, XGBClassifier) y
 irrigation need/
 ├── eda.ipynb              # Análisis exploratorio de datos
 ├── preprocessing.ipynb    # Preprocesamiento, entrenamiento y generación de submission
-├── AGENTS.md              # Instrucciones para agentes de IA
-├── formater.md            # Agente personalizado: Notebook Markdown Formatter
-├── duckdb/                # Directorio reservado para archivos DuckDB
 ├── .gitignore             # Ignora archivos CSV, .venv, checkpoints y cache
-├── .github/agents/        # Directorio para agentes de GitHub
 ├── train.csv              # Datos de entrenamiento (git-ignored)
 ├── test.csv               # Datos de test (git-ignored)
 └── submission.csv         # Predicciones para Kaggle (git-ignored)
@@ -70,7 +66,7 @@ Realizado en `eda.ipynb`. Hallazgos principales:
 
 1. **Matriz de correlación:** No se encontraron correlaciones fuertes entre las variables numéricas, lo que sugiere que cada variable aporta información única
 2. **Análisis de outliers:** Se analizaron mediante el método IQR y boxplots — no se identificaron outliers significativos, incluyendo `Rainfall_mm`
-3. **Desbalance de clases:** La clase `Low` representa ~58% de las muestras del target, un desbalance considerable
+3. **Desbalance de clases:** La clase `Low` representa ~58% de las muestras del target, mientras que la clase High por su lado, apenas significa un 3% del total.
 
 ### Preprocesamiento
 
@@ -127,6 +123,15 @@ El modelo final seleccionado fue **XGBClassifier** con los hiperparámetros opti
 - La clase `Low` es la mejor predicha con un **99.5%** de acierto
 - La clase `Medium` alcanza un **97.4%** de acierto
 - La clase `High` tiene un **92.2%** de acierto, con una ligera confusión hacia `Medium`
+
+Además, el modelo alcanzó un **Accuracy global del 98%**, destacando las siguientes métricas:
+- **F1-Score Macro:** 0.97
+- **F1-Score Weighted:** 0.98
+- **Clase `Low`:** Desempeño casi perfecto (F1, Precision y Recall de 0.99).
+- **Clase `Medium`:** Excelente capacidad predictiva (F1 de 0.98).
+- **Clase `High`:** Muy buenos resultados (F1 de 0.94) considerando que es la clase más minoritaria.
+
+El análisis completo se encuentra en `preprocessing.ipynb`.
 
 Las predicciones finales se generaron sobre el dataset de test y se exportaron a `submission.csv`.
 
